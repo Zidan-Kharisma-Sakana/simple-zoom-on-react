@@ -18,7 +18,7 @@ function App() {
   const [userEmail, setEmail] = useState('')
   const [passWord, setPassword] = useState('');
   // setup your signature endpoint here: https://github.com/zoom/websdk-sample-signature-node.js
-  var signatureEndpoint = 'http://pyon-pyon.herokuapp.com/'
+  var signatureEndpoint = 'https://pyon-pyon.herokuapp.com/'
   var apiKey = 'jkPitssHQqiJRZXQNossPw'
   var role = 0
   var leaveUrl = 'http://localhost:3000'

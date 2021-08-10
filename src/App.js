@@ -21,7 +21,7 @@ function App() {
   var signatureEndpoint = 'https://pyon-pyon.herokuapp.com/'
   var apiKey = 'jkPitssHQqiJRZXQNossPw'
   var role = 0
-  var leaveUrl = 'http://localhost:3000'
+  var leaveUrl = 'https://zoom-react.herokuapp.com/'
 
   // pass in the registrant's token if your meeting or webinar requires registration. More info here:
   // Meetings: https://marketplace.zoom.us/docs/sdk/native-sdks/web/build/meetings/join#join-registered

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import './App.css';
 
@@ -13,16 +13,16 @@ ZoomMtg.i18n.load('en-US');
 ZoomMtg.i18n.reload('en-US');
 
 function App() {
-
+  const [meetingNumber , setMeetingNumber] = useState('');
+  const [userName, setName] = useState('');
+  const [userEmail, setEmail] = useState('')
+  const [passWord, setPassword] = useState('');
   // setup your signature endpoint here: https://github.com/zoom/websdk-sample-signature-node.js
-  var signatureEndpoint = ''
-  var apiKey = ''
-  var meetingNumber = '123456789'
+  var signatureEndpoint = 'http://pyon-pyon.herokuapp.com/'
+  var apiKey = 'jkPitssHQqiJRZXQNossPw'
   var role = 0
   var leaveUrl = 'http://localhost:3000'
-  var userName = 'React'
-  var userEmail = ''
-  var passWord = ''
+
   // pass in the registrant's token if your meeting or webinar requires registration. More info here:
   // Meetings: https://marketplace.zoom.us/docs/sdk/native-sdks/web/build/meetings/join#join-registered
   // Webinars: https://marketplace.zoom.us/docs/sdk/native-sdks/web/build/webinars/join#join-registered-webinar
@@ -81,7 +81,19 @@ function App() {
     <div className="App">
       <main>
         <h1>Zoom WebSDK Sample React</h1>
-
+        <h2>{userName}</h2>
+        <div>
+          <label>Nama</label> <input type="text" value={userName} onChange={e=>setName(e.target.value)} />
+        </div>
+        <div>
+          <label>Email</label> <input type="text" value={userEmail} onChange={e=>setEmail(e.target.value)} />
+        </div>
+        <div>
+          <label>Meeting ID</label> <input type="text" placeholder="ex. 7265842602" value={meetingNumber} onChange={e=>setMeetingNumber(e.target.value)} />
+        </div>
+        <div>
+          <label>Password</label> <input type="text" placeholder="Kosongkan jika tidak ada" value={passWord} onChange={e=>setPassword(e.target.value)} />
+        </div>
         <button onClick={getSignature}>Join Meeting</button>
       </main>
     </div>
